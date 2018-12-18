@@ -1,0 +1,131 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/reset.css'%}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'css/balloon-page.css' %}">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css'>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script defer src="{%  static 'js/libs/jquery.flexslider.js' %}"></script>
+</head>
+
+<body>
+	<header>
+		<h1><a href="#">ТЕРРИТОРИЯ & ТВОРЧЕСТВА</a></h1>
+		<nav>
+			<ul>
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">Посмотреть все</a></li>
+				<li><a href="#">Блог</a></li>
+				<li><a href="#">Контакты</a></li>
+				<li><a href="#">Найти</a></li>
+			</ul>
+		</nav>
+		<img src="img/header/header-ballons.png" alt="">
+	</header>
+	<div class="container">
+		<div class="balloon_pic">
+			<!-- <img src="img/balloon_pic.jpg" alt=""> -->
+			<div class="cont">
+				{% if slides_count == 0 %}
+
+                        <img style="width: 125%; margin-left: -20px;" src="{{ creativity.main_photo.url }}" alt="">
+
+                {% else %}
+
+                    <div class="sliderCont">
+					<div class="slider slider-for">
+
+						{% for item in slides %}
+
+                            <div><img src="{{ item.url }}" alt=""></div>
+
+                        {% endfor %}
+
+					</div>
+					<div class="sliderNavCont">
+						<div class="arrw" id="prev">
+							<div>
+								<img src="{% static "img/arrow.png" %}" alt="">
+							</div>
+						</div>
+						<div class="slider slider-nav">
+							{% for item in slides %}
+
+                            <div><img src="{{ item.url }}" alt=""></div>
+
+                            {% endfor %}
+						</div>
+						<div class="arrw" id="next">
+							<div>
+								<img src="{% static "img/arrow.png" %}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+                {% endif %}
+			</div>
+		</div>
+		<div class="balloon_desc">
+
+                <div class="balloon_name">{{ creativity.name }}</div>
+                <div class="balloon_price">Цена <span>{{ creativity.price }}</span> грн</div>
+                <div class="balloon_order">
+                    <div class="submit">ЗАКАЗАТЬ</div>
+                </div>
+                <div class="balloon_big_line"></div>
+                <div class="balloon_info">{{ creativity.text }}</div>
+    {#			<div class="balloon_size">#}
+    {#				<div class="desc_title">Размер</div>#}
+    {#				<div class="desc_value">44</div>#}
+    {#			</div>#}
+		</div>
+	</div>
+	<div class="container">
+		<section class="items_rows">
+
+            {% for item in other_offers%}
+
+                <div>
+                    <a href="{% url "creativity_app:CreativityPage" slug=item.subcategory.slug pk=item.pk %}">
+                        <img src="{{ item.main_photo.url }}" alt="">
+                        <div>
+                            <div>{{ item.name }}</div>
+                            <div>{{ item.price }}</div>
+                        </div>
+                    </a>
+			    </div>
+
+            {% endfor %}
+
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</section>
+	</div>
+	<footer>
+		<h1><a href="#">ballons & flowers</a></h1>
+		<nav>
+			<ul>
+				<li><a href="#">Контакты</a></li>
+				<li><a href="#">Шарики</a></li>
+				<li><a href="#">Цветы</a></li>
+				<li><a href="#">Доставка</a></li>
+			</ul>
+		</nav>
+	</footer>
+	
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js'></script>
+
+	<script src="{% static "js/index.js" %}"></script>
+</body>
+
+</html>

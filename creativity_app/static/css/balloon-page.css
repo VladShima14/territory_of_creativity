@@ -1,0 +1,152 @@
+.container {
+  padding: 0;
+  margin: 20px auto; }
+  .container:first-of-type {
+    width: 75%;
+    margin: 20px 10% 0 15%; }
+  .container:last-of-type {
+    width: 80%; }
+
+.balloon_pic {
+  width: 40%; }
+  .balloon_pic img {
+    width: 100%; }
+
+.balloon_desc {
+  padding-left: 15%;
+  display: flex;
+  width: 60%;
+  padding-top: 50px;
+  align-items: center;
+  flex-flow: column;
+  text-transform: uppercase; }
+  .balloon_desc .balloon_name, .balloon_desc .balloon_price {
+    font: 400 17px "Merriweather"; }
+  .balloon_desc .balloon_price {
+    margin: 30px 0;
+    font-size: 24px; }
+    .balloon_desc .balloon_price span {
+      font-size: 32px; }
+  .balloon_desc .balloon_big_line {
+    background-color: #000;
+    width: 100%;
+    height: 6px; }
+  .balloon_desc .balloon_info {
+    margin: 45px 0 50px;
+    text-align: center;
+    font: 16px Merriweather;
+    font-variant: small-caps;
+    text-transform: none; }
+  .balloon_desc .balloon_size, .balloon_desc .balloon_color, .balloon_desc .balloon_material, .balloon_desc .balloon_quantity, .balloon_desc .balloon_text {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font: 24px Boblic;
+    padding: 20px 14px;
+    border-top: 1px solid black; }
+  .balloon_desc .balloon_color {
+    flex-direction: column;
+    padding-bottom: 15px; }
+  .balloon_desc .balloon_quantity {
+    border-bottom: 1px solid black; }
+    .balloon_desc .balloon_quantity select {
+      font: 20px Boblic;
+      padding: 0 10px 0 20px;
+      background-color: #FFF;
+      border: none; }
+      .balloon_desc .balloon_quantity select:focus {
+        outline: 0; }
+  .balloon_desc .balloon_text {
+    justify-content: center; }
+    .balloon_desc .balloon_text input {
+      margin: 6px 8px;
+      width: 15px;
+      height: 15px; }
+  .balloon_desc .balloon_order {
+    text-align: center;
+    padding-bottom: 18px;}
+    .balloon_desc .balloon_order .submit {
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 10px 35px 7px;
+      background-color: #F6E420;
+      font: 20px Boblic;
+      box-shadow: -2px -2px 5px 0px #c7c7c7; }
+      .balloon_desc .balloon_order .submit:active {
+        transform: translate(1px, 1px); }
+
+.items_rows {
+  margin-top: 80px;
+  padding-top: 15px;
+  }
+  .items_rows > div {
+    width: 23.5%; }
+
+.cont {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex; }
+
+/*
+*/
+
+.slick-slide {
+  width: 200px; }
+  .slick-slide:focus {
+    outline: none; }
+  .slick-slide:hover {
+    cursor: pointer; }
+
+.colors div {
+  float: left;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  clip-path: circle(50%);
+  display: inline-block;
+  border: 2px solid white;
+  cursor: pointer;
+  margin: 0 auto;
+  margin: 5px;
+  margin-left: 0; }
+
+.color-circle:hover {
+  border-color: #CDCCCC; }
+
+.slick-track div {
+  padding: 10px; }
+
+.active {
+  border-color: black !important; }
+
+.cont img {
+  width: 100%;}
+
+.sliderCont {
+  width: 500px; }
+
+.slider-nav {
+  width: 65%;
+  margin: 0 auto; }
+
+.sliderNavCont {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex; }
+
+.arrw {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* background: url('../img/arrow.png') no-repeat center center */ }
+
+#next {
+  transform: rotate(180deg); }
+
+.arrw img {
+  width: 100%; }

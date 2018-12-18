@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/reset.css'%}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'css/balloons.css' %}">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script defer src="{%  static 'js/libs/jquery.flexslider.js' %}"></script>
+</head>
+<body>
+	<header>
+		<h1><a href="#">ТЕРРИТОРИЯ & ТВОРЧЕСТВА</a></h1>
+		<nav>
+			<ul>
+                <li><a href="#">Главная</a></li>
+				<li><a href="#">Посмотреть все</a></li>
+				<li><a href="#">Блог</a></li>
+				<li><a href="#">Контакты</a></li>
+				<li><a href="#">Найти</a></li>
+			</ul>
+		</nav>
+		<img src="img/header/header-ballons.png" alt="">
+	</header>
+	<div class="container">
+		<aside>
+			<ul class="ballons_filter_list">
+                <li>
+                    <a href="{% url "creativity_app:MainPage" %}">Посмотреть всё</a>
+                </li>
+				{% for cat in category %}
+
+                    <li>
+					<a href="#">{{ cat.name }}</a>
+				    	<div class="sublist">
+						    <ul>
+							    {% for subcat in cat.subcategory.all %}
+
+                                    <li>
+                                        <a href="{% url "creativity_app:SubCategoryCreativeList" subcategory_slug=subcat.slug %}">
+                                            {{ subcat.name }}
+                                        </a>
+                                    </li>
+
+							    {% endfor %}
+
+						    </ul>
+					    </div>
+				    </li>
+
+                {% endfor %}
+
+			</ul>
+		</aside>
+		<main>
+{#			<div class="filter_size">#}
+{#				<ul class="ballons_filter_list">#}
+{#					<li class="active"><a href="#">Размер 1</a></li>#}
+{#					<li><a href="#">Размер 2</a></li>#}
+{#					<li><a href="#">Размер 3</a></li>#}
+{#					<li><a href="#">Размер 3</a></li>#}
+{#					<li><a href="#">Размер 3</a></li>#}
+{#				</ul>#}
+{#			</div>#}
+			<section class="items_rows">
+
+				{% for creative in creativities %}
+
+                    <div>
+					<a href="{% url "creativity_app:CreativityPage" pk=creative.pk slug=creative.subcategory.slug %}">
+						<img src="{{ creative.main_photo.url }}" alt="{{ creative.name }}">
+						<div>
+							<div>{{ creative.name|truncatechars:50 }}</div>
+							<div>{{ creative.price }}</div>
+						</div>
+					</a>
+				</div>
+
+                {% endfor %}
+
+			</section>
+		</main>
+	</div>
+	<footer>
+		<h1><a href="#">ballons & flowers</a></h1>
+		<nav>
+			<ul>
+				<li><a href="#">Контакты</a></li>
+				<li><a href="#">Шарики</a></li>
+				<li><a href="#">Цветы</a></li>
+				<li><a href="#">Доставка</a></li>
+			</ul>
+		</nav>
+	</footer>
+</body>
+</html>

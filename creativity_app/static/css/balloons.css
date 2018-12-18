@@ -1,0 +1,131 @@
+.container {
+  width: 80%;
+  margin: 20px auto 0;
+  padding: 0; }
+
+main {
+  width: 75%;
+  padding-left: 30px; }
+
+.items_rows {
+  border-top: none; }
+  .items_rows > div {
+    margin-bottom: 25px;
+    width: 49%; }
+    .items_rows > div a > div {
+      font-size: 16px; }
+
+aside {
+  width: 25%; }
+
+.ballons_filter_list {
+  margin-top: 80px; }
+  .ballons_filter_list li {
+    overflow: hidden; }
+    .ballons_filter_list li a {
+      color: black;
+      display: inline-block;
+      position: relative;
+      list-style-type: none;
+      font: 400 14px "Roboto";
+      padding: 20px 10px;
+      line-height: 0;
+      transition: all 0.5s ease;
+      text-decoration: none;
+      text-transform: uppercase; }
+      .ballons_filter_list li a:after {
+        content: "";
+        border-left: 1em solid transparent;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -1em;
+        top: 0;
+        transition: all 0.5s ease; }
+      .ballons_filter_list li a:hover {
+        background: #f6ff40; }
+        .ballons_filter_list li a:hover:after {
+          content: "";
+          border-left: 1em solid #f6ff40;
+          border-top: 20px solid transparent;
+          border-bottom: 20px solid transparent;
+          width: 0;
+          height: 0;
+          position: absolute;
+          right: -1em;
+          top: 0; }
+  .ballons_filter_list li.active > a {
+    background: #f6ff40; }
+    .ballons_filter_list li.active > a:after {
+      content: "";
+      border-left: 1em solid #f6ff40;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: -1em;
+      top: 0; }
+
+main .ballons_filter_list {
+  margin: 20px 0; }
+  main .ballons_filter_list li {
+    display: inline-block;
+    margin-right: 20px; }
+    main .ballons_filter_list li a {
+      font: 400 14px "Roboto";
+      padding: 15px 10px;
+      line-height: 0;
+      transition: all 0.5s ease; }
+      main .ballons_filter_list li a:after {
+        content: "";
+        border-left: 1em solid transparent;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent; }
+      main .ballons_filter_list li a:hover {
+        background: #00F330; }
+        main .ballons_filter_list li a:hover:after {
+          content: "";
+          border-left: 1em solid #00F330;
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent; }
+  main .ballons_filter_list li.active a {
+    background: #00F330; }
+    main .ballons_filter_list li.active a:after {
+      content: "";
+      border-left: 1em solid #00F330;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent; }
+
+aside .sublist {
+  max-height: 0;
+  transition: all 1s ease; }
+  aside .sublist ul li {
+    padding-left: 20px; }
+    aside .sublist ul li a {
+      font-size: 14px;
+      padding: 15px 10px; }
+      aside .sublist ul li a:after {
+        content: "";
+        border-left: 1em solid transparent;
+        border-top: 15px solid transparent !important;
+        border-bottom: 15px solid transparent !important; }
+      aside .sublist ul li a:hover {
+        background: #f6ff40; }
+        aside .sublist ul li a:hover:after {
+          content: "";
+          border-left: 1em solid #f6ff40;
+          border-top: 15px solid transparent !important;
+          border-bottom: 15px solid transparent !important; }
+  aside .sublist ul.active a {
+    background: #f6ff40; }
+    aside .sublist ul.active a:after {
+      content: "";
+      border-left: 1em solid #f6ff40;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent; }
+
+aside ul > li:hover .sublist {
+  max-height: 500px; }
