@@ -15,14 +15,14 @@
 	visibility: hidden;
 }
 
-header{
-	background-color: #000;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 1000;
-	transition: all ease-in-out 0.2s;
-}
+/*header{*/
+	/*background-color: #000;*/
+	/*position: fixed;*/
+	/*top: 0;*/
+	/*width: 100%;*/
+	/*z-index: 1000;*/
+	/*transition: all ease-in-out 0.2s;*/
+/*}*/
 
 .fll{
 	float: left;
