@@ -10,6 +10,8 @@ def cart_add(request, creativity_id):
     cart = Cart(request)
     creativity = get_object_or_404(Creativity, id=creativity_id)
     form = OrderForm(request.POST)
+    if form.is_valid():
+        cart.add(creativity=creativity)
     return redirect('cart:CartDetail')
 
 
@@ -22,4 +24,5 @@ def cart_remove(request, creativity_id):
 
 def cart_detail(request):
     cart = Cart(request)
+
     return render(request, 'cart/detail.html', {'cart': cart})

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
+from order.forms import OrderForm
 from .models import Creativity, Category, SubCategory, Album, Photo
 # Create your views here.
 
@@ -26,6 +27,7 @@ def creativity_detail(request, slug, pk):
     creativities = Creativity.objects.all()
     creativity = get_object_or_404(creativities, pk=pk)
     other_offers = creativities.filter(subcategory__slug=slug).exclude(pk=creativity.pk)
+    order_form = OrderForm()
     slides = []
     try:
         albums = creativity.album.get(creativity=creativity.pk)
@@ -39,5 +41,6 @@ def creativity_detail(request, slug, pk):
         'creativity': creativity,
         'other_offers':  other_offers,
         'slides': slides,
-        'slides_count': len(slides)
+        'slides_count': len(slides),
+        'order_form': order_form,
     })
